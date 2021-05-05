@@ -1,0 +1,22 @@
+# Example of configuration for codesweep
+name: sample
+rules:
+    file: fff # json file coming from visual code
+    includes: #list of rules to include 
+        - aaa
+        - bbb
+    excludes: #list of rules to exclude 
+        - ccc
+        - ddd
+folders:
+    file: ggg # XML file coming from Appscan
+    includes:  # list of folders to include 
+        - xxx
+        - yyy
+        - zzz
+    excludes: # list of folders to exclude 
+        - www
+pass-verdict:
+    max-warning:  12
+    max-error: 123
+
