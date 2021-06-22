@@ -1,22 +1,19 @@
 # Example of configuration for codesweep
-name: sample
-rules:
-    file: fff # json file coming from visual code
-    includes: #list of rules to include 
-        - aaa
-        - bbb
-    excludes: #list of rules to exclude 
-        - ccc
-        - ddd
-folders:
-    file: ggg # XML file coming from Appscan
-    includes:  # list of folders to include 
-        - xxx
-        - yyy
-        - zzz
-    excludes: # list of folders to exclude 
-        - www
-pass-verdict:
-    max-warning:  12
-    max-error: 123
-
+name: sample # Name of project, Required
+ignore: # Optional
+    file: xx_custom_scanners_service_ignore.json # json file coming from visual code, Optional
+    rules: #list of rules to ignore, Optional
+        - name: kom.ouncelabs.languagelite.nodejs.Rules.NodeJS_PrivateDataExposedviaHTTPURL # Name of rule, Required
+          language: NodeJS # Language of rule, Required
+        - name: kom.ouncelabs.languagelite.nodejs.Rules.NodeJS_PrivateDataExposedviaHTTP # Name of rule, Required
+          language: NodeJS # Language of rule, Required
+folders: # default=./ , Optional
+    configuration: configuration.xml # Configuration file for IRX file generation (XML file coming from Appscan), Optional
+    includes: # list of folders to include, Optional
+    excludes: # list of folders to exclude, Optional
+        - project/exclude_dir
+        - another_directory
+verdict: # PASS verdict, Optional
+    max-hight: 0 # default=0, Optional
+    max-medium: 10 # default=0 , Optional
+    max-low: 100 # default=-1 (no limit), Optional
