@@ -3,9 +3,9 @@ name: sample # Name of project, Required
 ignore: # Optional
     file: xx_custom_scanners_service_ignore.json # json file coming from visual code, Optional
     rules: #list of rules to ignore, Optional
-        - name: kom.ouncelabs.languagelite.nodejs.Rules.NodeJS_PrivateDataExposedviaHTTPURL # Name of rule, Required
+        - name: com.ouncelabs.languagelite.nodejs.Rules.NodeJS_PrivateDataExposedviaHTTPURL # Name of rule, Required
           language: NodeJS # Language of rule, Required
-        - name: kom.ouncelabs.languagelite.nodejs.Rules.NodeJS_PrivateDataExposedviaHTTP # Name of rule, Required
+        - name: com.ouncelabs.languagelite.nodejs.Rules.NodeJS_PrivateDataExposedviaHTTP # Name of rule, Required
           language: NodeJS # Language of rule, Required
 folders: # default=./ , Optional
     configuration: configuration.xml # Configuration file for IRX file generation (XML file coming from Appscan), Optional
@@ -14,6 +14,6 @@ folders: # default=./ , Optional
         - project/exclude_dir
         - another_directory
 verdict: # PASS verdict, Optional
-    max-hight: 0 # default=0, Optional
+    max-high: 0 # default=0, Optional
     max-medium: 10 # default=0 , Optional
     max-low: 100 # default=-1 (no limit), Optional
