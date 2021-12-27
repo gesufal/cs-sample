@@ -1,19 +1,19 @@
-# Example of configuration for codesweep
-name: sample # Name of project, Required
-ignore: # Optional
-    file: xx_custom_scanners_service_ignore.json # json file coming from visual code, Optional
-    rules: #list of rules to ignore, Optional
-        - name: com.ouncelabs.languagelite.nodejs.Rules.NodeJS_PrivateDataExposedviaHTTPURL # Name of rule, Required
-          language: NodeJS # Language of rule, Required
-        - name: com.ouncelabs.languagelite.nodejs.Rules.NodeJS_PrivateDataExposedviaHTTP # Name of rule, Required
-          language: NodeJS # Language of rule, Required
-folders: # default=./ , Optional
-    configuration: configuration.xml # Configuration file for IRX file generation (XML file coming from Appscan), Optional
-    includes: # list of folders to include, Optional
-    excludes: # list of folders to exclude, Optional
+# Example of configuration file .codesweep
+name: sample of .codesweep # Name of project, Required
+ignore: # Rules management, Optional
+    file: xx_custom_scanners_service_ignore.json # copy of Visual Studio Code AppScan preferences json file, Optional
+    rules: # LIST of rules to ignore, Optional
+        - name: com.ouncelabs.languagelite.nodejs.Rules.NodeJS_PrivateDataExposedviaHTTPURL # Name of rule, Required for a rule
+          language: NodeJS # Language of rule, Required for a rule
+        - name: com.ouncelabs.languagelite.nodejs.Rules.NodeJS_PrivateDataExposedviaHTTP # Name of rule, Required for a rule
+          language: NodeJS # Language of rule, Required for a rule
+folders: # Folders to take into account from the ".codesweep" file directory, wilcards are not allowed, default = ./ (all directory content), Optional
+    configuration: configuration.xml # Folders configuration file in XML syntax (IRX friendly syntax coming from Appscan) wilcard are not allowed in it, Optional
+    includes: # LIST of folders to include, Optional
+    excludes: # LIST of folders to exclude, Optional
         - project/exclude_dir
         - another_directory
-verdict: # PASS verdict, Optional
-    max-high: 0 # default=0, Optional
-    max-medium: 10 # default=0 , Optional
-    max-low: 100 # default=-1 (no limit), Optional
+verdict: # global verdict preferences, Optional
+    max-high: 1 # default = 0, Optional
+    max-medium: 10 # default = 0 , Optional
+    max-low: 100 # default = -1 ( <0 is unlimited), Optional
